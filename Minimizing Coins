@@ -1,0 +1,26 @@
+void solve(){
+   ll n,x;
+   cin >> n >> x;
+   vector<ll>v(n);
+   getv;
+   vector<ll>dp(x + 1 , 1e9 + 7);
+   dp[0] = 0;
+   for(int i = 1 ; i <= x ; i++){
+    for(int j = 0 ; j < n ; j++){
+        if(v[j] <= i){
+            dp[i] = min(dp[i] , dp[i - v[j]] + 1);
+        }
+    }
+   }
+   if(dp[x] < 1e9 + 7) cout << dp[x] << endl;
+   else cout << -1 << endl;
+}
+signed main(){
+    ll t;
+    t = 1;
+    //cin >> t;
+    while(t--){
+        solve();
+    }
+
+}
